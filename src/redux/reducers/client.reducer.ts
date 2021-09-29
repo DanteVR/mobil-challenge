@@ -23,19 +23,21 @@ export default (
     case clientTypes.CREATE_CLIENT_REQUEST:
       return {
         ...errorReducer(state, action),
-        loading: true
+        loading: true,
+        response: null
       }
     case clientTypes.CREATE_CLIENT_SUCCESS:
       return {
         ...state,
         loading: false,
-        response: null,
+        response: action.payload,
         error: null
       }
     case clientTypes.CREATE_CLIENT_FAILURE:
       return {
         ...errorReducer(state, action),
-        loading: false
+        loading: false,
+        response: null
       }
     default:
       return state

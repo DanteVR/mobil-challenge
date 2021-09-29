@@ -1,11 +1,11 @@
 import { clientTypes as types } from '../types/client.types'
 import { call, put, takeLatest } from '@redux-saga/core/effects'
-import { CreateAction } from '../actions/client.actions'
+import { CreateClientAction } from '../actions/client.actions'
 import { store } from '../../services/client.service'
 import { AxiosResponse } from 'axios'
 import { errorAction } from '../actions/error.actions'
 
-export function* create({ payload }: CreateAction) {
+export function* create({ payload }: CreateClientAction) {
   try {
     const { data }: AxiosResponse = yield call(store, payload)
     yield put({ type: types.CREATE_CLIENT_SUCCESS, payload: data })

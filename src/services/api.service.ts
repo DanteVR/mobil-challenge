@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://05a77dede5f5.ngrok.io/api/v1'
+const BASE_URL = 'http://167.71.169.167:5001'
 
 export const api = axios.create({
   baseURL: BASE_URL,

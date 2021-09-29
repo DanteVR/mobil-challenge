@@ -9,7 +9,7 @@ export default (state: any, action: any) => {
     ...state,
     error: {
       message: 'Error',
-      ...action.payload?.response.data
+      ...action.payload?.response?.data
     }
   }
 }
